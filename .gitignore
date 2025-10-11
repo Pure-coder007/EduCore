@@ -15,3 +15,4 @@ db.sqlite3
 # VSCode / MacOS
 .vscode/
 .DS_Store
+README.md
