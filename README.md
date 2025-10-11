@@ -34,53 +34,6 @@ It manages students, lecturers, courses, results, and payments — with real-tim
 ✅ Redis caching for leaderboard and announcements  
 ✅ API-first design (usable by web or mobile frontend)  
 
----
-
-## ⚙️ Installation & Setup
-
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/yourusername/educore.git
-cd educore
-```
-
-### 2️⃣ Create a `.env` file
-```env
-SECRET_KEY=your-secret-key
-DEBUG=True
-DATABASE_URL=postgres://postgres:password@db:5432/educore
-REDIS_URL=redis://redis:6379/0
-EMAIL_HOST=smtp.gmail.com
-EMAIL_HOST_USER=youremail@gmail.com
-EMAIL_HOST_PASSWORD=yourpassword
-EMAIL_PORT=587
-EMAIL_USE_TLS=True
-```
-
-### 3️⃣ Run with Docker
-```bash
-docker-compose up --build
-```
-
-Services:
-- `web` → Django app  
-- `db` → PostgreSQL  
-- `redis` → Redis cache  
-- `worker` → Celery worker  
-- `beat` → Celery beat scheduler  
-
-To view logs:
-```bash
-docker-compose logs -f web
-```
-
----
-
-## 🧱 Database Models
-
-(See conversation above for model descriptions and endpoints.)
-
----
 
 ## 🚀 API Endpoints
 
@@ -112,12 +65,7 @@ docker-compose exec web pytest
 
 ---
 
-## 🧭 API Docs
 
-Swagger UI → [http://localhost:8000/swagger/](http://localhost:8000/swagger/)  
-ReDoc → [http://localhost:8000/redoc/](http://localhost:8000/redoc/)
-
----
 
 ## 🚧 Future Improvements
 
@@ -131,7 +79,7 @@ ReDoc → [http://localhost:8000/redoc/](http://localhost:8000/redoc/)
 
 ## 💡 Developer Notes
 
-- Students get ₦500 demo credit on registration (via signal).  
+- Students get ₦50000 demo credit on registration (via signal).  
 - Emails are sent via Celery workers (non-blocking).  
 - Redis is used for caching frequently accessed data (departments, leaderboard).  
 - All sensitive operations (results, payments) require admin approval.
@@ -199,9 +147,3 @@ ReDoc → [http://localhost:8000/redoc/](http://localhost:8000/redoc/)
     └── GET /static/{path}
 
 
-## 🧑‍💻 Author
-
-**Kingsley [Your Surname]**  
-Backend Developer • Builder • Football Lover ⚽  
-📧 [your.email@example.com]  
-🐙 [github.com/yourusername](https://github.com/yourusername)
